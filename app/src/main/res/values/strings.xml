@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SleepMeditation</string>
+    <string name="external_storage_permission">External Storage</string>
+    <string name="external_storage_rationale_message">Please Allow to see Audios,Videos and Documents</string>
+    <string name="open_setting">Open Settings</string>
+    <string name="close">Close</string>
+    <string name="allow_access">Allow Storage Access</string>
+    <string name="not_now">Not Now</string>
+    <string name="allow_permissions">Allow Permissions</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all_audios_string">All Audios : %d</string>
+    <string name="total_audios">Total Audios</string>
+</resources>
