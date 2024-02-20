@@ -33,7 +33,7 @@ class AudioAdapter(private val context: Context,
         holder.title.text = audioList[position].title
         holder.album.text = audioList[position].album
         holder.duration.text = formatDuration(audioList[position].duration!!)
-        Glide.with(context).load(audioList[position].artUri)
+        Glide.with(context).load(audioList[position].image)
             .apply(RequestOptions().placeholder(R.mipmap.ic_launcher).centerCrop())
             .into(holder.image)
         holder.root.setOnClickListener {

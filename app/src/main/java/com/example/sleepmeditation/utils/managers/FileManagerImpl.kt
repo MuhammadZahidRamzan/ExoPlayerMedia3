@@ -48,7 +48,10 @@ class FileManagerImpl @Inject constructor(private val context: Context): FileMan
                     val artistC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))
                     val pathC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA))
                     val sizeC = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.SIZE))
+                    val albumIdC = cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID)).toString()
                     val durationC = cursor.getLong(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION))
+                    val uri = Uri.parse("content://media/external/audio/albumart")
+                    val uriImage = Uri.withAppendedPath(uri,albumIdC).toString()
                     try {
                         val file = File(pathC)
                         val artUriC = Uri.fromFile(file)
@@ -60,7 +63,8 @@ class FileManagerImpl @Inject constructor(private val context: Context): FileMan
                             path = pathC,
                             duration = durationC,
                             artUri = artUriC,
-                            size = sizeC
+                            size = sizeC,
+                            image = uriImage
                         )
                         if (file.exists()) tempList.add(music)
                     } catch (e: Exception) {

@@ -5,10 +5,120 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".features.audio.presentation.activity.AudioPlayerActivity">
-    <androidx.media3.ui.PlayerView
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_audio_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.118"
+        app:shapeAppearanceOverlay="@style/curved"
+        app:strokeColor="@color/black"
+        app:strokeWidth="5dp" />
+
+    <TextView
+        android:id="@+id/tv_audio_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/exo_player"
-        />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Song Name"
+        android:textIsSelectable="true"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_audio_image"
+        app:layout_constraintVertical_bias="0.13"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btn_play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        app:icon="@drawable/icon_pause"
+        app:iconSize="50dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_audio_name"
+        app:layout_constraintVertical_bias="0.13999999"
+        app:shapeAppearanceOverlay="@style/curved" />
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        app:icon="@drawable/icon_next"
+        app:iconSize="50dp"
+        app:iconTint="@color/white"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_play_pause"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toEndOf="@id/btn_play_pause"
+        app:layout_constraintTop_toTopOf="@+id/btn_play_pause"
+        app:layout_constraintVertical_bias="0.13999999"
+        app:shapeAppearanceOverlay="@style/curved" />
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btn_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        app:icon="@drawable/icon_previous"
+        app:iconSize="50dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btn_play_pause"
+        app:layout_constraintEnd_toStartOf="@id/btn_play_pause"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintTop_toTopOf="@id/btn_play_pause"
+        app:layout_constraintVertical_bias="0.13999999"
+        app:shapeAppearanceOverlay="@style/curved" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_progress"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play_pause"
+        app:layout_constraintVertical_bias="0.29000002"
+        tools:layout_editor_absoluteX="20dp">
+
+        <TextView
+            android:id="@+id/tv_seek_bar_start"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="00:00"
+            android:textSize="15sp" />
+
+        <SeekBar
+            android:id="@+id/sb_audio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:id="@+id/tv_seek_bar_end"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="03:00"
+            android:textSize="15sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

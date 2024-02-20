@@ -13,5 +13,7 @@ data class Audio(
     val duration: Long? = 0,
     val size: String?,
     val path: String?,
-    val artUri: Uri?
+    val artUri: Uri?,
+    val image: String?
+
 ):Parcelable
